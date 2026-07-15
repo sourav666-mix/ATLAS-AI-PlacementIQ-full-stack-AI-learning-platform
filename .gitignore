@@ -1,0 +1,17 @@
+.env
+.env.local
+.env.*.local
+**/.env
+**/.env.local
+__pycache__/
+**/__pycache__/
+*.pyc
+node_modules/
+**/node_modules/
+dist/
+**/dist/
+build/
+**/build/
+/outputs
+.vscode/*.log
+*.log
