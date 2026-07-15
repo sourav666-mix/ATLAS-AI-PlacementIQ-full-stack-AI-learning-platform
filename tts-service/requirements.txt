@@ -1,0 +1,5 @@
+# FILE: tts-service/requirements.txt
+fastapi
+uvicorn[standard]
+chatterbox-tts
+torchaudio

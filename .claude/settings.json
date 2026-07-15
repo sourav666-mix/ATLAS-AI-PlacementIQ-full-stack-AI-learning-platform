@@ -1,0 +1,34 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Set-Location \"e:\\\\ATLAS_AI_2.0_v10_scaffold\\(2\\)\\\\atlas-ai\\\\backend\"; $env:PYTHONPATH = \"e:\\\\ATLAS_AI_2.0_v10_scaffold\\(2\\)\\\\atlas-ai\\\\backend\"; & \".\\\\venv\\\\Scripts\\\\python.exe\" \"C:\\\\Users\\\\DASELC~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--ATLAS-AI-2-0-v10-scaffold-2--atlas-ai\\\\f66c4680-5301-4f4c-a941-0f7196ec3955\\\\scratchpad\\\\test_providers.py\" | Select-String -NotMatch \"sqlalchemy\")",
+      "PowerShell(Set-Location \"e:\\\\ATLAS_AI_2.0_v10_scaffold\\(2\\)\\\\atlas-ai\\\\backend\"; $env:PYTHONPATH = \"e:\\\\ATLAS_AI_2.0_v10_scaffold\\(2\\)\\\\atlas-ai\\\\backend\"; & \".\\\\venv\\\\Scripts\\\\python.exe\" \"C:\\\\Users\\\\DASELC~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--ATLAS-AI-2-0-v10-scaffold-2--atlas-ai\\\\f66c4680-5301-4f4c-a941-0f7196ec3955\\\\scratchpad\\\\list_gemini.py\")",
+      "PowerShell(Set-Location \"e:\\\\ATLAS_AI_2.0_v10_scaffold\\(2\\)\\\\atlas-ai\\\\backend\"; $env:PYTHONPATH = \"e:\\\\ATLAS_AI_2.0_v10_scaffold\\(2\\)\\\\atlas-ai\\\\backend\"; & \".\\\\venv\\\\Scripts\\\\python.exe\" \"C:\\\\Users\\\\DASELC~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--ATLAS-AI-2-0-v10-scaffold-2--atlas-ai\\\\f66c4680-5301-4f4c-a941-0f7196ec3955\\\\scratchpad\\\\pick_gemini.py\")",
+      "PowerShell(\"`n=== requirements ===\")",
+      "PowerShell(\"`n=== frontend env ===\")",
+      "PowerShell(\"=== frontend .env ===\")",
+      "PowerShell(\"=== frontend .env.example ===\")",
+      "PowerShell(\"=== backend env files ===\")",
+      "PowerShell(\"=== schemas/user.py ===\")",
+      "PowerShell(Get-Content backend\\\\app\\\\services\\\\auth_service.py -Raw -Encoding utf8 | Select-String -Pattern \"get_or_create_google_user\" -AllMatches | ForEach-Object { $_.Matches.Count }; Get-Content backend\\\\app\\\\schemas\\\\user.py -Raw -Encoding utf8 | Select-String \"class GoogleLogin\" | ForEach-Object { \"schema ok\" }; & backend\\\\venv\\\\Scripts\\\\python.exe -c \"import ast; ast.parse\\(open\\('backend/app/services/auth_service.py', encoding='utf-8-sig'\\).read\\(\\)\\); ast.parse\\(open\\('backend/app/schemas/user.py', encoding='utf-8-sig'\\).read\\(\\)\\); ast.parse\\(open\\('backend/app/routers/auth.py', encoding='utf-8-sig'\\).read\\(\\)\\); ast.parse\\(open\\('backend/app/config.py', encoding='utf-8-sig'\\).read\\(\\)\\); print\\('syntax ok'\\)\")",
+      "PowerShell(& backend\\\\venv\\\\Scripts\\\\python.exe -c \"import sys; sys.path.insert\\(0, 'backend'\\); from app.routers import auth; from app.services import auth_service; from app.schemas.user import GoogleLogin; print\\('backend imports ok:', hasattr\\(auth_service, 'get_or_create_google_user'\\)\\)\")",
+      "PowerShell(Select-String -Path backend\\\\tests\\\\conftest.py -Pattern \"login|data=|json=\" | Select-Object -First 12 | ForEach-Object { \"$\\($_.LineNumber\\): $\\($_.Line.Trim\\(\\)\\)\" })",
+      "PowerShell(& backend\\\\venv\\\\Scripts\\\\python.exe \"C:\\\\Users\\\\DASELC~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--ATLAS-AI-2-0-v10-scaffold-2--atlas-ai\\\\14a6a22c-dea9-40d3-a944-519ce698dde9\\\\scratchpad\\\\check_login.py\")",
+      "PowerShell(& backend\\\\venv\\\\Scripts\\\\python.exe \"C:\\\\Users\\\\DASELC~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--ATLAS-AI-2-0-v10-scaffold-2--atlas-ai\\\\14a6a22c-dea9-40d3-a944-519ce698dde9\\\\scratchpad\\\\e2e_auth.py\" 2>$null)",
+      "PowerShell(npm run build)",
+      "PowerShell(cd backend; Get-ChildItem -Directory | Where-Object { $_.Name -match 'venv|env' } | Select-Object Name; Test-Path .\\\\venv\\\\Scripts\\\\python.exe)",
+      "PowerShell(cd frontend; $env:VITE_CJS_TRACE=\"\"; npm run dev 2>&1 | Out-File -FilePath \"$env:TEMP\\\\vite_dev.log\" -Encoding utf8)",
+      "PowerShell(Start-Sleep -Seconds 6; Get-Content \"$env:TEMP\\\\vite_dev.log\" -ErrorAction SilentlyContinue)",
+      "PowerShell($mods = @\\(\"/src/main.jsx\",\"/src/App.jsx\",\"/src/api/skillpathV3Api.js\",\"/src/store/skillpathStore.js\",\"/src/pages/DomainSelect.jsx\",\"/src/pages/RoadmapDashboard.jsx\",\"/src/components/SkillPath/RoadmapDashboard.jsx\",\"/src/components/SkillPath/DomainSwitcher.jsx\"\\); foreach \\($m in $mods\\) { try { $r = Invoke-WebRequest -Uri \"http://localhost:5174$m\" -UseBasicParsing -TimeoutSec 10; Write-Output \\(\"OK   {0}  \\({1} bytes\\)\" -f $m, $r.Content.Length\\) } catch { Write-Output \\(\"FAIL {0}  -> {1}\" -f $m, $_.Exception.Message\\) } })",
+      "PowerShell($f = Invoke-WebRequest -Uri \"http://localhost:5174/src/api/skillpathV3Api.js\" -UseBasicParsing -TimeoutSec 10; Write-Output \\(\"5174 imports axios.js? {0}\" -f \\($f.Content -match 'api/axios'\\)\\); Write-Output \\(\"5174 still has /client? {0}\" -f \\($f.Content -match '/client'\\)\\))",
+      "PowerShell(python -c \"from app.models.practice import TopicQuestion; print\\('OK:', 'created_order' in TopicQuestion.__table__.columns\\)\")",
+      "PowerShell(& \".\\\\venv\\\\Scripts\\\\python.exe\" -c \"import app.main; print\\('\\\\n'.join\\(sorted\\(r.path for r in app.main.app.routes if '/resume' in r.path\\)\\)\\)\")",
+      "PowerShell(Start-Sleep -Seconds 2; try { $r = Invoke-WebRequest -Uri http://localhost:5174 -UseBasicParsing -TimeoutSec 5; Write-Output \"STATUS: $\\($r.StatusCode\\)\" } catch { Write-Output \"ERROR: $\\($_.Exception.Message\\)\" })",
+      "PowerShell(Invoke-WebRequest -Uri http://localhost:5174 -UseBasicParsing -TimeoutSec 5)",
+      "PowerShell(cd \"e:\\\\ATLAS_AI_2.0_v10_scaffold\\(2\\)\\\\atlas-ai\\\\backend\"; $env:PYTHONPATH = \\(Get-Location\\).Path; .\\\\venv\\\\Scripts\\\\python.exe \"C:\\\\Users\\\\DASELC~1\\\\AppData\\\\Local\\\\Temp\\\\claude\\\\e--ATLAS-AI-2-0-v10-scaffold-2--atlas-ai\\\\9c70371a-d05d-4fa7-90ea-9ee7d94e4d5f\\\\scratchpad\\\\update_admin.py\" 2>&1 | Select-String -Pattern \"updated:|NOT FOUND|Error\")",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)"
+    ]
+  }
+}

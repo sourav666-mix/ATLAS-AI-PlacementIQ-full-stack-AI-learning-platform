@@ -1,0 +1,12 @@
+# FILE: backend/.dockerignore
+__pycache__/
+*.pyc
+.env
+.env.*
+!.env.example
+test_atlas.sqlite
+.pytest_cache/
+tests/
+alembic/__pycache__/
+*.md
+.git/

@@ -15,3 +15,10 @@ build/
 /outputs
 .vscode/*.log
 *.log
+venv/
+**/venv/
+.venv/
+**/.venv/
+*.egg-info/
+**/*.egg-info/
+backend/storage/
